@@ -12,3 +12,19 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const list = document.querySelector(".gallery")
+list.style.display = "flex"
+
+const addImg = images.forEach(img => {
+
+  const listItem = document.createElement("li")
+  listItem.classList.add("item");
+  list.append(listItem);
+
+  const listImg = document.createElement("img")
+  listImg.setAttribute("src", img.url)
+  listImg.setAttribute("alt", img.alt)
+  listImg.setAttribute("width", "320px")
+  list.lastElementChild.append(listImg)
+})
